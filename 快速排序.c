@@ -1,19 +1,20 @@
+//å¿«é€Ÿæ’åº
 #include <stdio.h>
 void quicksort(int data[],int first,int last)
 {
     int i, j, t, base;
     if (first>last)
         return;
-    base=data[first];               /* ÓÃÊ×ÔªËØ×÷Îª»ùÊı */
+    base=data[first];               /* ç”¨é¦–å…ƒç´ ä½œä¸ºåŸºæ•° */
     i=first;
     j=last;
-    while(i!=j)                     /* ÖØ¸´ÏÂÃæµÄ¹ı³Ì£¬Ö±µ½iºÍjÏàµÈ */
+    while(i!=j)                     /* é‡å¤ä¸‹é¢çš„è¿‡ç¨‹ï¼Œç›´åˆ°iå’Œjç›¸ç­‰ */
     {
-        while(data[j]>=base && i<j) /* j´ÓÓÒÏò×ó£¬ÕÒµ½Ğ¡ÓÚ»ùÊıµÄÔªËØ */
+        while(data[j]>=base && i<j) /* jä»å³å‘å·¦ï¼Œæ‰¾åˆ°å°äºåŸºæ•°çš„å…ƒç´  */
             j--;
-        while(data[i]<=base && i<j) /* i´Ó×óÏòÓÒ£¬ÕÒµ½´óÓÚ»ùÊıµÄÔªËØ */
+        while(data[i]<=base && i<j) /* iä»å·¦å‘å³ï¼Œæ‰¾åˆ°å¤§äºåŸºæ•°çš„å…ƒç´  */
             i++;
-        /* ½»»»Á½¸öÊı */
+        /* äº¤æ¢ä¸¤ä¸ªæ•° */
         if(i<j)
         {
             t=data[i];
@@ -21,10 +22,10 @@ void quicksort(int data[],int first,int last)
             data[j]=t;
         }
     }
-    data[first]=data[i];        /* ½«i,jÏàÓö´¦µÄÖµ±£´æÔÚ»ùÊıÎ»ÖÃ */
-    data[i]=base;               /* ½«»ùÊı±£´æÔÚÆäÓ¦¸ÃµÄÎ»ÖÃ */
-    quicksort(data,first,i-1);  /* ÓÃÍ¬ÑùµÄ²ßÂÔ£¬µİ¹é´¦Àí×ó±ßµÄ²¿·Ö */
-    quicksort(data,i+1,last);   /* ÓÃÍ¬ÑùµÄ²ßÂÔ£¬µİ¹é´¦ÀíÓÒ±ßµÄ²¿·Ö */
+    data[first]=data[i];        /* å°†i,jç›¸é‡å¤„çš„å€¼ä¿å­˜åœ¨åŸºæ•°ä½ç½® */
+    data[i]=base;               /* å°†åŸºæ•°ä¿å­˜åœ¨å…¶åº”è¯¥çš„ä½ç½® */
+    quicksort(data,first,i-1);  /* ç”¨åŒæ ·çš„ç­–ç•¥ï¼Œé€’å½’å¤„ç†å·¦è¾¹çš„éƒ¨åˆ† */
+    quicksort(data,i+1,last);   /* ç”¨åŒæ ·çš„ç­–ç•¥ï¼Œé€’å½’å¤„ç†å³è¾¹çš„éƒ¨åˆ† */
 }
 int main( )
 {
